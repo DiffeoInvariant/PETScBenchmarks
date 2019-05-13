@@ -84,8 +84,7 @@ int main(int argc, char **args)
     ierr = MatAssemblyBegin(writeMat, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
     ierr = MatAssemblyEnd(writeMat, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
     
-    ierr = PetscPrintf(PETSC_COMM_WORLD, "Writing matrix to binary file %s...\n",FILENAME
-                       ); CHKERRQ(ierr);
+    ierr = PetscPrintf(PETSC_COMM_WORLD, "Writing matrix to binary file %s...\n",FILENAME); CHKERRQ(ierr);
     ierr = PetscViewerBinaryOpen(PETSC_COMM_WORLD, FILENAME, FILE_MODE_WRITE, &viewer); CHKERRQ(ierr);
     ierr = MatView(writeMat, viewer); CHKERRQ(ierr);
     /*free memory*/
