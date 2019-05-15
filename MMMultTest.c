@@ -14,7 +14,6 @@ static char help[] = "Tests speed of multiplying two PETSc AIJ matrices with a s
 #define MATRIX2_FILENAME "matrix2.dat"
 
 #define SMALL_ITER 30
-#define LARGE_ITER 1000
 
 /**
  reads matrix from filename, fills readMat
@@ -63,7 +62,7 @@ int main(int argc, char** argv)
     startT = MPI_Wtime();
     ierr = PetscPrintf(PETSC_COMM_WORLD, "Running benchmark. This could take a while...\n"); CHKERRQ(ierr);
     #if defined(LARGE_ITER)
-    for(i = 0; i < LARGE_ITER; i++){
+    for(i = 0; i < 250; i++){
         ierr = MatMatMultSymbolic(Mat1, Mat2, PETSC_DEFAULT, &Mat3); CHKERRQ(ierr);
     }
     #else
