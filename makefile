@@ -1,9 +1,8 @@
-PETSC_DIR        =/usr/local/include/petsc
-PETSC_ARCH       =arch-darwin-c-debug
+PETSC_DIR        =/Users/zanejakobs/petsc #change for your machine
+PETSC_ARCH       =arch-darwin-c-debug #also maybe change this
 CC		 = clang
 CFLAGS		 = -O3 -Werror -I$(PETSC_DIR)/include -I$(PETSC_DIR)/$(PETSC_ARCH)/include
-GFORTPATH	 = /usr/local/Cellar/gcc/9.1.0/lib/gcc/9
-LDFLAGS		 = -L $(PETSC_DIR)/$(PETSC_ARCH)/lib -L$(GFORTPATH) -lgfortran -lpetsc -lmpi
+LDFLAGS		 = -L $(PETSC_DIR)/$(PETSC_ARCH)/lib -lpetsc -lmpi
 FILENAMES	 = 
 NUM_CORES	 =4
 
